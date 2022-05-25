@@ -1,6 +1,6 @@
 {
   "name": "api.slm.games",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "API of SLM.Games",
   "main": "index.js",
   "author": "SLM.Games",
