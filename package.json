@@ -1,0 +1,15 @@
+{
+  "name": "api.slm.games",
+  "version": "1.0.0",
+  "description": "API of SLM.Games",
+  "main": "index.js",
+  "author": "SLM.Games",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "axios": "^0.27.2",
+    "jsonpipe": "^2.2.0"
+  }
+}
