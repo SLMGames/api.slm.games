@@ -1,5 +1,5 @@
-const axios = require("axios");
-const jsonpipe = require("jsonpipe");
+import axios from "axios";
+import jsonpipe from "jsonpipe";
 
 export default class api {
   constructor(host = "https://api.slm.games", token) {
@@ -65,5 +65,36 @@ export default class api {
     }
 
     return jsonpipe.flow(url, config);
+  }
+
+  async userGetInfo() {
+    return await this.call("User.GetInfo", {});
+  }
+
+  async walletGetBalance(symbol) {
+    const rsp = await this.call("Wallet.PageBalances", {
+      PageIndex: 1,
+      PageSize: 1,
+      Query: `{"Symbol": "${symbol}"}`,
+    });
+    const balance = rsp.Data;
+    if (balance.length) {
+      return balance[0];
+    }
+    return {};
+  }
+
+  async diceBet(dir, num, symbol, amount, banker = 1) {
+    const dirs = {
+      under: 1,
+      over: 2,
+    };
+    return await this.call("Dice.Bet", {
+      Dir: dirs[dir],
+      Number: num,
+      Symbol: symbol,
+      Amount: amount,
+      BankerNftID: banker,
+    });
   }
 }
