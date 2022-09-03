@@ -1,3 +1,9 @@
+# Community
+
+Official Website: https://slm.games
+
+Telegram: https://t.me/slm_games
+
 # Installation
 
 - Using npm:
