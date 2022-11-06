@@ -1,8 +1,14 @@
 {
   "name": "api.slm.games",
-  "version": "v1.0.7",
+  "version": "1.0.9",
   "description": "API of SLM.Games",
-  "keywords": ["SLM.Games", "SLM", "Crypto", "Casino", "SDK"],
+  "keywords": [
+    "SLM.Games",
+    "SLM",
+    "Crypto",
+    "Casino",
+    "SDK"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/SLMGames/api.slm.games"
