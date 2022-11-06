@@ -1,9 +1,11 @@
 import axios from "axios";
 import jsonpipe from "jsonpipe";
+global.XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 
 export default class api {
   constructor(host = "https://api.slm.games", token) {
     this.token = token;
+    this.host = host;
     this.axios = axios.create({
       baseURL: host,
       headers: {
@@ -35,16 +37,16 @@ export default class api {
     } catch (e) {
       throw {
         method: method,
-        status: e.response.status,
-        data: e.response.data,
+        status: e.response?.status,
+        data: e.response?.data,
       };
     }
   }
 
   pipe(method, options) {
-    const url = `${
-      request.defaults.baseURL
-    }v1/gw/stream?method=${encodeURIComponent(method)}`;
+    const url = `${this.host}/v1/gw/stream?method=${encodeURIComponent(
+      method
+    )}`;
     const config = Object.assign(
       {
         delimiter: "\n",
@@ -71,6 +73,16 @@ export default class api {
     return await this.call("User.GetInfo", {});
   }
 
+  async changeAnonymous(a) {
+    const s = {
+      true: 1,
+      false: 2,
+    };
+    return await this.call("User.ChangeAnonymous", {
+      Anonymous: s[a],
+    });
+  }
+
   async walletGetBalance(symbol) {
     const rsp = await this.call("Wallet.PageBalances", {
       PageIndex: 1,
@@ -92,6 +104,15 @@ export default class api {
     return await this.call("Dice.Bet", {
       Dir: dirs[dir],
       Number: num,
+      Symbol: symbol,
+      Amount: amount,
+      BankerNftID: banker,
+    });
+  }
+
+  async crashBet(multi, symbol, amount, banker = 940) {
+    return await this.call("Crash.Bet", {
+      Multiplier: multi,
       Symbol: symbol,
       Amount: amount,
       BankerNftID: banker,

@@ -1,7 +1,13 @@
 {
   "name": "api.slm.games",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "API of SLM.Games",
+  "keywords": ["SLM.Games", "SLM", "Crypto", "Casino", "SDK"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SLMGames/api.slm.games"
+  },
+  "homepage": "https://slm.games",
   "main": "index.js",
   "author": "SLM.Games",
   "license": "MIT",
@@ -11,6 +17,7 @@
   },
   "dependencies": {
     "axios": "^0.27.2",
-    "jsonpipe": "^2.2.0"
+    "jsonpipe": "^2.2.0",
+    "xmlhttprequest": "^1.8.0"
   }
 }
