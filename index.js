@@ -1,6 +1,7 @@
 import axios from "axios";
 import jsonpipe from "jsonpipe";
-global.XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+import { XMLHttpRequest } from "xmlhttprequest";
+global.XMLHttpRequest = XMLHttpRequest;
 
 export default class api {
   constructor(host = "https://api.slm.games", token) {
