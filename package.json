@@ -1,6 +1,6 @@
 {
   "name": "api.slm.games",
-  "version": "1.0.8",
+  "version": "v1.0.7",
   "description": "API of SLM.Games",
   "keywords": ["SLM.Games", "SLM", "Crypto", "Casino", "SDK"],
   "repository": {
@@ -11,6 +11,7 @@
   "main": "index.js",
   "author": "SLM.Games",
   "license": "MIT",
+  "type": "module",
   "scripts": {
     "test": "node index.js"
   },
