@@ -1,5 +1,7 @@
 # Community
 
+SLM.Games - Best Crypto Casino for Web3 with NFT
+
 Official Website: https://slm.games
 
 Telegram: https://t.me/slm_games
